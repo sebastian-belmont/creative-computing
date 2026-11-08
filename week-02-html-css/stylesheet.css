@@ -1,0 +1,151 @@
+/* ==========================================================
+   Colours as variables
+   Light theme is the default; dark overrides the same names.
+   ========================================================== */
+:root {
+    --bg: #f7f7f5;
+    --text: #000000;
+    --muted: #141414;
+    --line: #dcdcd8;
+    --accent: #2f5bd3;
+    --button-bg: #ffffff;
+
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Dark theme, chosen with the toggle */
+:root[data-theme="dark"] {
+    --bg: #121212;
+    --text: #ececec;
+    --muted: #c5c5c5;
+    --line: #2c2c2c;
+    --accent: #8fb0ff;
+    --button-bg: #1d1d1d;
+}
+
+/* Dark theme by default if the device is set to dark
+   and the visitor hasn't picked a theme yet */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --bg: #121212;
+        --text: #ececec;
+        --muted: #cecece;
+        --line: #2c2c2c;
+        --accent: #8fb0ff;
+        --button-bg: #1d1d1d;
+    }
+}
+
+/* ==========================================================
+   Page
+   ========================================================== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 18px;
+    text-align: left;
+    line-height: 1.6;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.creative {
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 96px 24px 80px;
+}
+
+h1 {
+    margin: 0 0 8px;
+    font-size: 48px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+
+h2 {
+    margin: 48px 0 12px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.id {
+    margin: 0 0 40px;
+    font-size: 20px;
+    color: var(--muted);
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.bio {
+    margin: 0 0 32px;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 2px;
+}
+
+a:hover {
+    border-bottom-width: 2px;
+}
+
+/* ==========================================================
+   Theme toggle button
+   ========================================================== */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 8px 16px;
+    background-color: var(--button-bg);
+    color: var(--text);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-family: var(--font);
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    text-align: center;
+    cursor: pointer;
+}
+
+.theme-toggle:hover {
+    border-color: var(--muted);
+}
+
+.theme-toggle:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* Smaller screens */
+@media (max-width: 600px) {
+    body {
+        font-size: 16px;
+    }
+
+    .creative {
+        padding-top: 80px;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+}

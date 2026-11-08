@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sebastian Belmont</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <!-- Runs before the page draws, so it opens in the right theme without flashing -->
+    <script>
+        try {
+            const saved = localStorage.getItem("theme");
+            if (saved) document.documentElement.dataset.theme = saved;
+        } catch (e) {}
+    </script>
+</head>
+
+<body>
+<button class="theme-toggle" type="button" aria-label="Switch between light and dark theme">
+    <span class="theme-toggle__label">Dark</span>
+</button>
+
+<main class="creative">
+
+    <h1>Sebastian Belmont</h1>
+
+    <p class="id">
+        Creative Computing student exploring code, interfaces and AI.
+    </p>
+
+    <img src="images/portrait.svg" alt="Placeholder image: swap for a photo or artwork of your own">
+
+    <h2>About</h2>
+
+    <p class="bio">
+        I'm a first-year Creative Computing student at Winchester School of Art. I'm interested in how tools like AI are changing who gets to make things, and I'm learning to build interactive work with Python,  p5.js and Arduino. My goal is to learn a diverse variety of skills and combine the digital with the physical through a variety of projects.
+    </p>
+
+    <a href="https://wsa-creativecomputing.org/bjw1g26/about-me/">More about me</a>
+
+</main>
+
+<script src="theme.js"></script>
+</body>
+</html>
